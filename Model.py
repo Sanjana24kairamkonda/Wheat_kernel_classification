@@ -8,9 +8,7 @@ from sklearn.mixture import GaussianMixture
 from sklearn.metrics import silhouette_score
 from sklearn.metrics import accuracy_score
 from scipy import stats
-file = ".\Seed_Data.csv"
-file_path: str = os.path.join(file)
-df = pd.read_csv(file_path)
+df = pd.read_csv("Seed_Data.csv")
 df = df.drop('target', axis=1)
 df.info()
 df.head()
