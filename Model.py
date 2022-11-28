@@ -8,8 +8,8 @@ from sklearn.mixture import GaussianMixture
 from sklearn.metrics import silhouette_score
 from sklearn.metrics import accuracy_score
 from scipy import stats
-df = pd.read_csv("Seed_Data.csv")
-df = df.drop('target', axis=1)
+from sklearn import datasets
+df = =datasets.load_Seed_from_UCI()
 df.info()
 df.head()
 X = df.iloc[:, [0,1,2,3,4,5,6]].values
