@@ -8,7 +8,7 @@ from sklearn.mixture import GaussianMixture
 from sklearn.metrics import silhouette_score
 from sklearn.metrics import accuracy_score
 from scipy import stats
-file = "C:\Users\lenovo\PycharmProjects\Wheat kernel classification\Seed_Data.csv"
+file = ".\Seed_Data.csv"
 file_path: str = os.path.join(file)
 df = pd.read_csv(file_path)
 df = df.drop('target', axis=1)
