@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <style>
+      .login{
+        width: 700px;
+        background-color: rgb(209, 189, 128);
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+	<center><h1>Wheat Kernel Classification</h1></center>
+    <center><div class="login" >
+     <center><h3>The model predicts the type of wheat kernel given 7 geometrical properties of kernels. </h3></center>
+     <center><h3>Prediction 0: Kama</h3></center>
+     <center><h3>Prediction 1: Rosa</h3></center>
+     <center><h3>Prediction 2: Canadian</h3></center>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<center><label>Area:</label><input name="Area" placeholder="Area" required="required" style="width:150px" type="text"/></center><br>
+        <center><label>Perimeter:</label><input type="text" name="perimeter" placeholder="perimeter" required="required" style="width:150px" /></center><br>
+		<center><label>Compactness:</label><input type="text" name="compactness" placeholder="compactness" required="required" style="width:150px" /></center><br>
+		<center><label>Kernel length:</label><input type="text" name="kernel_length" placeholder="kernel_length" required="required" style="width:150px" /></center><br>
+        <center><label>Kernel width:</label><input type="text" name="kernel_width" placeholder="kernel_width" required="required" style="width:150px" /></center><br>
+        <center><label>Coeff asymmetry:</label><input type="text" name="coeff_asymmetry" placeholder="coeff_asymmetry" required="required" style="width:150px" /></center><br>
+        <center><label>kernel groove length:</label><input type="text" name="kernel_groove_length" placeholder="kernel_groove_length" required="required" style="width:150px" /></center><br>
+
+        <center><button type="submit" class="btn btn-primary btn-block btn-large" style="height:30px">Predict</button></center><br><br>
+    </form><center><h3>Prediction :{{ prediction_text }}</h3></center><br>
+ </div></center>
+ <br><br>
+</div>
+
+</body>
+</html>
